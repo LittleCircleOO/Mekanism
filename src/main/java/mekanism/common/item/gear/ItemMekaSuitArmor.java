@@ -133,7 +133,7 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
                 armorConfig = MekanismConfig.gear.mekaSuitHelmetArmor;
             }
             case CHESTPLATE -> {
-                gasTankSpecs.add(ChemicalTankSpec.createFillOnly(MekanismConfig.gear.mekaSuitJetpackTransferRate, MekanismConfig.gear.mekaSuitJetpackMaxStorage,
+                gasTankSpecs.add(ChemicalTankSpec.createFillOnly(MekanismConfig.gear.mekaSuitJetpackTransferRate, stack -> MekanismConfig.gear.mekaSuitJetpackMaxStorage * getModule(stack, MekanismModules.JETPACK_UNIT).getInstalledCount(),
                       gas -> gas == MekanismGases.HYDROGEN.get(), stack -> hasModule(stack, MekanismModules.JETPACK_UNIT)));
                 absorption = 0.4F;
                 laserDissipation = 0.3;
